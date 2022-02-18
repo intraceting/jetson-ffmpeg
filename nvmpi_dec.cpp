@@ -484,6 +484,9 @@ int nvmpi_decoder_get_frame(nvmpictx* ctx,nvFrame* frame,bool wait){
 	frame->payload_size[1]=ctx->frame_size[1];
 	frame->payload_size[2]=ctx->frame_size[2];
 	frame->timestamp=ctx->timestamp[picture_index];
+	/*copy type*/
+	frame->type = ctx->out_pixfmt;
+
 
 	return 0;
 
